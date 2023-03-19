@@ -8,7 +8,7 @@ function setup()
 function draw()
 {
     background(0);
-    translate(200, 200); //relocate the center of the circle
+    translate(200, 200); //where to begin to draw
 
     let radius = 50;
 
@@ -16,5 +16,12 @@ function draw()
     noFill();
     ellipse(0, 0, radius*2);
 
-    time += 0.01;
+    //create the point in moving
+    let x = radius*cos(time);
+    let y = radius*sin(time);
+    fill(225)
+    ellipse(x,y,8); //tiny circle 
+    line(0,0,x,y);
+
+    time += 0.05;
 }
